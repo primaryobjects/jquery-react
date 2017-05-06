@@ -1,10 +1,4 @@
-var PubSubManager = {
-  subscribers: [],
-
-  subscribe: function(parent, callback) {
-    this.subscribers.push({ parent: parent, callback: callback });
-  },
-
+var UIManager = {
   getColor: function(parent, callback) {
     callback($('#box').css('background-color'), parent);
   },
@@ -16,6 +10,6 @@ var PubSubManager = {
 
 $(function() {
   setTimeout(function() {
-    ReactDOM.render(React.createElement(MyComponent, { context: PubSubManager }), document.getElementById('root'));
+    ReactDOM.render(React.createElement(MyComponent, { context: UIManager }), document.getElementById('root'));
   }, 0);
 });
